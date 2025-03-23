@@ -12,7 +12,6 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 import java.nio.file.Paths;
-import java.util.List;
 
 import static com.github.viclovsky.swagger.coverage.SwaggerCoverageConstants.OUTPUT_DIRECTORY;
 
