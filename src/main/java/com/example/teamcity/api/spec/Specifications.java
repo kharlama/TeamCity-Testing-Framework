@@ -30,6 +30,7 @@ public class Specifications {
         ));
         requestBuilder.setContentType(ContentType.JSON);
         requestBuilder.setAccept(ContentType.JSON);
+        requestBuilder.setBaseUri("http://" + Config.getProperty("host"));
         return requestBuilder;
     }
 
