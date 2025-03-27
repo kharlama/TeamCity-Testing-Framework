@@ -87,7 +87,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>${selenide.version}</version>
+            <version>7.7.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
