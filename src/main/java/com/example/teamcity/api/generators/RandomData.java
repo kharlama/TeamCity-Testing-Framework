@@ -1,6 +1,7 @@
 package com.example.teamcity.api.generators;
 
-import org.apache.commons.lang.RandomStringUtils;
+
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class RandomData {
 
@@ -8,7 +9,7 @@ public class RandomData {
     private static final int MAX_LENGTH = 10;
 
     public static String getString() {
-        return TEST_PREFIX + RandomStringUtils.randomAlphabetic(MAX_LENGTH);
+        return TEST_PREFIX + org.apache.commons.lang3.RandomStringUtils.randomAlphabetic(MAX_LENGTH);
     }
 
     public static String getString(int length) {
