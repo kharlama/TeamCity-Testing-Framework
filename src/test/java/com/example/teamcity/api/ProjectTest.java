@@ -8,8 +8,6 @@ import com.example.teamcity.api.requests.unchecked.UncheckedBase;
 import com.example.teamcity.api.spec.Specifications;
 import com.example.teamcity.api.spec.ValidationResponseSpecifications;
 import org.apache.commons.lang.RandomStringUtils;
-import org.apache.http.HttpStatus;
-import org.hamcrest.Matchers;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
