@@ -24,6 +24,7 @@
         <aspectj.version>1.9.21</aspectj.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
+        <swagger-coverage-rest-assured.version>1.5.0</swagger-coverage-rest-assured.version>
     </properties>
 
     <dependencies>
@@ -86,8 +87,13 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>7.7.3</version>
+            <version>${selenide.version}</version>
             <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.viclovsky</groupId>
+            <artifactId>swagger-coverage-rest-assured</artifactId>
+            <version>${swagger-coverage-rest-assured.version}</version>
         </dependency>
     </dependencies>
     <build>
