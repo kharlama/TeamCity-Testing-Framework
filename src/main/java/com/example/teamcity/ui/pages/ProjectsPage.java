@@ -50,9 +50,7 @@ public class ProjectsPage extends BasePage {
         return this;
     }
 
-    public List<SideBarProjectElement> getSideBarProjects() throws InterruptedException {
+    public List<SideBarProjectElement> getSideBarProjects(){
         return generatePageElements( sideBarProjectElements, SideBarProjectElement::new);
     }
-    //можно ли в такой концепции чейн инвокейшин как то юзать геттеры и сеттеры юай элементов напрямую?
-    //сейчас получается что когда юзаю например эелемент клик то цепочка прерывается и надо снова начинать с опен пейдж а это сбрасывпет все предыдущие действия
-}
+ }
