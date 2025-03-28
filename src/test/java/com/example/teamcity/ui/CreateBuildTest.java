@@ -23,7 +23,7 @@ import static com.example.teamcity.api.enums.Endpoint.BUILD_TYPES;
 @Test(groups = {"Regression"})
 public class CreateBuildTest extends BaseUiTest{
     private static final String REPO_URL = "https://github.com/AlexPshe/spring-core-for-qa";
-    private static final String BUILD_STATE_SUCCESS = "Success";
+    //private static final String BUILD_STATE_SUCCESS = "Success";
 
     @Test(description = "User should be able to create build", groups = {"Positive"})
     public void userCreatesBuildConfiguration() {
