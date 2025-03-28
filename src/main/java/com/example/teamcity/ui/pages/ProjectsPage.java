@@ -44,14 +44,13 @@ public class ProjectsPage extends BasePage {
 
     public ProjectsPage searchForProject(String projectName) {
         searchProjectInput.val(projectName);
+        header.shouldBe(Condition.visible, BASE_WAITING);
         addToFavorites.shouldNotBe(Condition.visible, BASE_WAITING);
         allProjects.shouldNotBe(Condition.visible, BASE_WAITING);
-        header.shouldBe(Condition.visible, BASE_WAITING);
         return this;
     }
 
     public List<SideBarProjectElement> getSideBarProjects() throws InterruptedException {
-        sideBarProjectElements.wait();
         return generatePageElements( sideBarProjectElements, SideBarProjectElement::new);
     }
     //можно ли в такой концепции чейн инвокейшин как то юзать геттеры и сеттеры юай элементов напрямую?
