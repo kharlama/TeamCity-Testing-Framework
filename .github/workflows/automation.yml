@@ -45,7 +45,7 @@ jobs:
           # Обязательно добавить фильтр SwaggerCoverageRestAssured в RestAssured
 
       - name: Grant execute permissions to swagger-coverage
-        run: chmod +x ./swagger-coverage-commandline/bin/swagger-coverage-commandline
+        run: chmod +x .swagger-coverage-commandline/bin/swagger-coverage-commandline
 
       - name: Run Swagger Coverage
         continue-on-error: true
