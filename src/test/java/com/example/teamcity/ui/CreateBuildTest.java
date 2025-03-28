@@ -51,7 +51,7 @@ public class CreateBuildTest extends BaseUiTest{
 
 
     /*@Test(description = "User should be able to run the build", groups = {"Positive"})
-    public void userRunsTheBuildSucessfully() {
+    public void userRunsTheBuildSuccessfully() {
         loginAs(testData.getUser());
         var userCheckRequests = new CheckedRequests(Specifications.authSpec(testData.getUser()));
         var project = userCheckRequests.<Project>getRequest(Endpoint.PROJECTS).create(testData.getProject());
