@@ -77,8 +77,8 @@ public class ValidationResponseSpecifications {
     public static ResponseSpecification checkUserCannotEditProjectWithInsufficientRights(String projectId) {
         ResponseSpecBuilder responseSpecBuilder = new ResponseSpecBuilder();
         responseSpecBuilder.expectStatusCode(HttpStatus.SC_FORBIDDEN);
-        responseSpecBuilder.expectBody(Matchers.containsString("You do not have enough permissions to edit project with id: %s\n".formatted(projectId) +
-            "Access denied. Check the user has enough permissions to perform the operation."));
+        responseSpecBuilder.expectBody(Matchers.containsString("You do not have enough permissions to edit project with id: %s".formatted(projectId)));
+        responseSpecBuilder.expectBody(Matchers.containsString("Access denied. Check the user has enough permissions to perform the operation."));
         return responseSpecBuilder.build();
     }
 }

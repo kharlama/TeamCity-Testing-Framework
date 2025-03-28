@@ -96,7 +96,6 @@ public class BuildTypeTest extends BaseApiTest {
 
         new UncheckedRequests(Specifications.authSpec(developerRoleUser2)).getRequest(BUILD_TYPES).create(buildType)
                     .then().spec(ValidationResponseSpecifications.checkUserCannotEditProjectWithInsufficientRights(buildType.getId()));});
-    //тут не переноситься в месседже почему-то - подскажи плиз что не так
     }
 
     @Test(description = "User should be able to run build type and check its status", groups = {"Positive", "CRUD"})
