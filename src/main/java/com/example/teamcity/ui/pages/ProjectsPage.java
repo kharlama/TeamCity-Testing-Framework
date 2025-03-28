@@ -50,8 +50,8 @@ public class ProjectsPage extends BasePage {
         return this;
     }
 
-    public List<SideBarProjectElement> getSideBarProjects() {
-        addToFavorites.shouldNotBe(Condition.visible, BASE_WAITING);
+    public List<SideBarProjectElement> getSideBarProjects() throws InterruptedException {
+        sideBarProjectElements.wait();
         return generatePageElements( sideBarProjectElements, SideBarProjectElement::new);
     }
     //можно ли в такой концепции чейн инвокейшин как то юзать геттеры и сеттеры юай элементов напрямую?
