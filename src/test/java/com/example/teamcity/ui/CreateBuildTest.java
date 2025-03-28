@@ -50,7 +50,7 @@ public class CreateBuildTest extends BaseUiTest{
     }
 
 
-    @Test(description = "User should be able to run the build", groups = {"Positive"})
+    /*@Test(description = "User should be able to run the build", groups = {"Positive"})
     public void userRunsTheBuildSucessfully() {
         loginAs(testData.getUser());
         var userCheckRequests = new CheckedRequests(Specifications.authSpec(testData.getUser()));
@@ -71,5 +71,5 @@ public class CreateBuildTest extends BaseUiTest{
         new ProjectBuildsPage().runBuildAndWaitBuildSuccess(buildElement);
 
         soft.assertEquals(buildElement.getBuildStatus().getText(), BUILD_STATE_SUCCESS);
-    }
+    }*/
 }

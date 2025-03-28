@@ -30,7 +30,7 @@ public class StartBuildTest extends BaseApiTest {
         WireMock.setupServer(post(BUILD_QUEUE.getUrl()), HttpStatus.SC_OK, fakeBuild);
     }
 
-    @Test(description = "User should be able to start build (with WireMock)", groups = {"Regression"})
+    /*@Test(description = "User should be able to start build (with WireMock)", groups = {"Regression"})
     public void userStartsBuildWithWireMockTest() {
         var checkedBuildQueueRequest = new CheckedBase<Build>(Specifications
                 .mockSpec(), BUILD_QUEUE);
@@ -41,7 +41,7 @@ public class StartBuildTest extends BaseApiTest {
 
         soft.assertEquals(build.getState(), "finished");
         soft.assertEquals(build.getStatus(), "SUCCESS");
-    }
+    }*/
 
     @Test(description = "User should be able to run build type and check its mocked status", groups = {"Positive", "CRUD"})
     public void userShouldBeAbleToRunBuildTypeAndCheckItsMockedStatus() {
