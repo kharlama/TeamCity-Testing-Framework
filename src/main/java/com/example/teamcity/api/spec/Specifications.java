@@ -4,6 +4,7 @@ import com.example.teamcity.api.config.Config;
 import com.example.teamcity.api.models.User;
 import com.github.viclovsky.swagger.coverage.FileSystemOutputWriter;
 import com.github.viclovsky.swagger.coverage.SwaggerCoverageRestAssured;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.authentication.BasicAuthScheme;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -31,6 +32,7 @@ public class Specifications {
                         Paths.get("target/" + OUTPUT_DIRECTORY)
                 )
         ));
+        reqBuilder.addFilter(new AllureRestAssured());
         return reqBuilder;
     }
 
