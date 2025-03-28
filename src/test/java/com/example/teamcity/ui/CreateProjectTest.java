@@ -103,7 +103,8 @@ public class CreateProjectTest extends BaseUiTest {
         var userCheckRequests = new CheckedRequests(Specifications.authSpec(testData.getUser()));
         var project = userCheckRequests.<Project>getRequest(Endpoint.PROJECTS).create(testData.getProject());
 
-        List<String> searchedProjects = ProjectsPage.open().searchForProject(project.getName()).getSideBarProjects().stream().map(proj -> proj.getName().text()).collect(Collectors.toList());
+        ProjectsPage.open().searchForProject(project.getName());
+        List<String> searchedProjects = new ProjectsPage().getSideBarProjects().stream().map(proj -> proj.getName().text()).collect(Collectors.toList());
 
         soft.assertEquals(searchedProjects, Arrays.asList(testData.getProject().getName()));
     }
