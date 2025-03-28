@@ -50,7 +50,8 @@ public class ProjectsPage extends BasePage {
         return this;
     }
 
-    public List<SideBarProjectElement> getSideBarProjects(){
+    public List<SideBarProjectElement> getSideBarProjects() throws InterruptedException {
+        Thread.sleep(1000);
         return generatePageElements( sideBarProjectElements, SideBarProjectElement::new);
     }
  }
