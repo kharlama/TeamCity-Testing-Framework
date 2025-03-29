@@ -6,7 +6,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.example.teamcity.ui.elements.ProjectElement;
 import com.example.teamcity.ui.elements.SideBarProjectElement;
-import lombok.Getter;
 
 import java.util.List;
 
