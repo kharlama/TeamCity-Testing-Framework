@@ -8,7 +8,6 @@ import com.example.teamcity.api.requests.unchecked.UncheckedBase;
 import com.example.teamcity.api.spec.Specifications;
 import com.example.teamcity.api.spec.ValidationResponseSpecifications;
 import com.example.teamcity.common.WireMock;
-import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
