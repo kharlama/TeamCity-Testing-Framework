@@ -18,4 +18,5 @@ public class UncheckedRequests {
     public UncheckedBase getRequest(Endpoint endpoint) {
         return requests.get(endpoint);
     }
+
 }
