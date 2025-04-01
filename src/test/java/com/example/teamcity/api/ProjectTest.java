@@ -208,7 +208,6 @@ public class ProjectTest extends BaseApiTest {
         soft.assertEquals(searchedProject, createdProject);
     }
 
-//подскажи пжта а можно с датапровайдера передать роль в название теста?
     @Test(dataProvider = "projectCreationRolesAreNotAllowedData", description = "User should not be able to create project as Project Viewer, Develop, Agent Manager", groups = {"Negative", "CRUD"})
     public void userShouldNotBeAbleToCreateProjectAsProjectViewer(String role) {
         User projectViewerUser = testData.getUser();
