@@ -38,10 +38,11 @@ public class CreateProjectPage extends CreateBasePage {
         return this;
     }
 
-    public void setupProject(String projectName, String buildTypeName) {
+    public void setupProject(String projectName, String buildTypeName) throws InterruptedException {
         projectNameInput.val(projectName);
         buildTypeNameInput.val(buildTypeName);
         submitButton.click();
+        wait(1000);
     }
 
     public CreateProjectPage setupProjectManually(String projectName, String buildTypeName) {

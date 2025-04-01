@@ -22,7 +22,7 @@ public class CreateProjectTest extends BaseUiTest {
     private static final String REPO_URL = "https://github.com/AlexPshe/spring-core-for-qa";
 
     @Test(description = "User should be able to create project", groups = {"Positive"})
-    public void userCreatesProject() {
+    public void userCreatesProject() throws InterruptedException {
         /*step("Open `Create Project Page` (http://localhost:8111/admin/createObjectMenu.html)");
         step("Send all project parameters (repository URL)");
         step("Click `Proceed`");
