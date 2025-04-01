@@ -21,6 +21,7 @@ public class CreateProjectPage extends CreateBasePage {
     protected SelenideElement projectIdInput = $("#externalId");
     protected SelenideElement manuallyOption = $("[href='#createManually']");
     protected SelenideElement createButton = $(Selectors.byAttribute("value", "Create"));
+    protected SelenideElement editProjectBreadcrumbs = $("#restPageTitle");
 
     @Getter
     public SelenideElement projectNameInputError = $("#errorName");
@@ -38,11 +39,11 @@ public class CreateProjectPage extends CreateBasePage {
         return this;
     }
 
-    public void setupProject(String projectName, String buildTypeName) throws InterruptedException {
+    public void setupProject(String projectName, String buildTypeName) {
         projectNameInput.val(projectName);
         buildTypeNameInput.val(buildTypeName);
         submitButton.click();
-        wait(1000);
+        editProjectBreadcrumbs.shouldBe(Condition.exactText(buildTypeName));
     }
 
     public CreateProjectPage setupProjectManually(String projectName, String buildTypeName) {
