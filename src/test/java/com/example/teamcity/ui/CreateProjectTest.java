@@ -108,5 +108,4 @@ public class CreateProjectTest extends BaseUiTest {
 
         soft.assertEquals(searchedProjects, Arrays.asList(testData.getProject().getName()));
     }
-
 }
