@@ -16,9 +16,7 @@ public class ProjectBuildsPage extends BasePage {
     private ElementsCollection buildsElements = $$("[class*='BuildTypes__item']");
     private SelenideElement content = $("[class*='ModeSwitch__header']");
 
-    public ProjectBuildsPage() {
-        content.shouldBe(Condition.visible, BASE_WAITING);
-    }
+    public ProjectBuildsPage() { content.shouldBe(Condition.visible, BASE_WAITING); }
 
     public static ProjectBuildsPage open(String projectId) {
         return Selenide.open(PROJECT_BUILDS_URL.formatted(projectId), ProjectBuildsPage.class);

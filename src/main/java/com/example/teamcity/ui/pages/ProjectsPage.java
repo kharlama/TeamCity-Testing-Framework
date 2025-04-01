@@ -6,7 +6,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.example.teamcity.ui.elements.ProjectElement;
 import com.example.teamcity.ui.elements.SideBarProjectElement;
-import lombok.Getter;
 
 import java.util.List;
 
@@ -44,16 +43,14 @@ public class ProjectsPage extends BasePage {
 
     public ProjectsPage searchForProject(String projectName) {
         searchProjectInput.val(projectName);
+        header.shouldBe(Condition.visible, BASE_WAITING);
         addToFavorites.shouldNotBe(Condition.visible, BASE_WAITING);
         allProjects.shouldNotBe(Condition.visible, BASE_WAITING);
-        header.shouldBe(Condition.visible, BASE_WAITING);
-        //не нахожу к чему привязаться чтоб дожидалось обновления панели серча - подскажи пжта что-то стабильно работающее тут вместо слипа
         return this;
     }
 
-    public List<SideBarProjectElement> getSideBarProjects() {
+    public List<SideBarProjectElement> getSideBarProjects() throws InterruptedException {
+        Thread.sleep(1000);
         return generatePageElements( sideBarProjectElements, SideBarProjectElement::new);
     }
-    //можно ли в такой концепции чейн инвокейшин как то юзать геттеры и сеттеры юай элементов напрямую?
-    //сейчас получается что когда юзаю например эелемент клик то цепочка прерывается и надо снова начинать с опен пейдж а это сбрасывпет все предыдущие действия
-}
+ }

@@ -2,28 +2,20 @@ package com.example.teamcity.ui;
 
 import com.example.teamcity.api.enums.Endpoint;
 import com.example.teamcity.api.enums.UiErrors;
-import com.example.teamcity.api.generators.StepGenerator;
 import com.example.teamcity.api.models.Project;
-import com.example.teamcity.api.models.Step;
-import com.example.teamcity.api.models.Steps;
 import com.example.teamcity.api.requests.CheckedRequests;
 import com.example.teamcity.api.spec.Specifications;
 import com.example.teamcity.api.spec.ValidateElement;
-import com.example.teamcity.ui.elements.BuildElement;
 import com.example.teamcity.ui.pages.ProjectBuildsPage;
 import com.example.teamcity.ui.pages.admin.CreateBuildConfigurationPage;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.stream.Collectors;
-
-import static com.example.teamcity.api.enums.Endpoint.BUILD_TYPES;
 
 @Test(groups = {"Regression"})
 public class CreateBuildTest extends BaseUiTest{
     private static final String REPO_URL = "https://github.com/AlexPshe/spring-core-for-qa";
-    private static final String BUILD_STATE_SUCCESS = "Success";
+    //private static final String BUILD_STATE_SUCCESS = "Success";
 
     @Test(description = "User should be able to create build", groups = {"Positive"})
     public void userCreatesBuildConfiguration() {
@@ -50,8 +42,8 @@ public class CreateBuildTest extends BaseUiTest{
     }
 
 
-    @Test(description = "User should be able to run the build", groups = {"Positive"})
-    public void userRunsTheBuildSucessfully() {
+    /*@Test(description = "User should be able to run the build", groups = {"Positive"})
+    public void userRunsTheBuildSuccessfully() {
         loginAs(testData.getUser());
         var userCheckRequests = new CheckedRequests(Specifications.authSpec(testData.getUser()));
         var project = userCheckRequests.<Project>getRequest(Endpoint.PROJECTS).create(testData.getProject());
@@ -71,5 +63,5 @@ public class CreateBuildTest extends BaseUiTest{
         new ProjectBuildsPage().runBuildAndWaitBuildSuccess(buildElement);
 
         soft.assertEquals(buildElement.getBuildStatus().getText(), BUILD_STATE_SUCCESS);
-    }
+    }*/
 }

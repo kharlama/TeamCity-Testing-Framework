@@ -21,6 +21,7 @@ public class CreateProjectPage extends CreateBasePage {
     protected SelenideElement projectIdInput = $("#externalId");
     protected SelenideElement manuallyOption = $("[href='#createManually']");
     protected SelenideElement createButton = $(Selectors.byAttribute("value", "Create"));
+    protected SelenideElement editProjectBreadcrumbs = $("#restPageTitle");
 
     @Getter
     public SelenideElement projectNameInputError = $("#errorName");
@@ -42,6 +43,7 @@ public class CreateProjectPage extends CreateBasePage {
         projectNameInput.val(projectName);
         buildTypeNameInput.val(buildTypeName);
         submitButton.click();
+        editProjectBreadcrumbs.shouldBe(Condition.exactText(buildTypeName));
     }
 
     public CreateProjectPage setupProjectManually(String projectName, String buildTypeName) {

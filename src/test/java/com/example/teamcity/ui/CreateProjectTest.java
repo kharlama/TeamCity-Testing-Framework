@@ -22,7 +22,7 @@ public class CreateProjectTest extends BaseUiTest {
     private static final String REPO_URL = "https://github.com/AlexPshe/spring-core-for-qa";
 
     @Test(description = "User should be able to create project", groups = {"Positive"})
-    public void userCreatesProject() {
+    public void userCreatesProject() throws InterruptedException {
         /*step("Open `Create Project Page` (http://localhost:8111/admin/createObjectMenu.html)");
         step("Send all project parameters (repository URL)");
         step("Click `Proceed`");
@@ -56,7 +56,7 @@ public class CreateProjectTest extends BaseUiTest {
         soft.assertTrue(foundProjects);
     }
 
-    @Test(description = "User should not be able to crete project without name", groups = {"Negative"})
+    @Test(description = "User should not be able to create project without name", groups = {"Negative"})
     public void userCreatesProjectWithoutName() {
        /* // подготовка окружения
         step("Login as user");
@@ -98,12 +98,13 @@ public class CreateProjectTest extends BaseUiTest {
     }
 
     @Test(description = "User should be able to search for project by its full name", groups = {"Positive"})
-    public void userSearchesProjectByItsName() {
+    public void userSearchesProjectByItsName() throws InterruptedException {
         loginAs(testData.getUser());
         var userCheckRequests = new CheckedRequests(Specifications.authSpec(testData.getUser()));
         var project = userCheckRequests.<Project>getRequest(Endpoint.PROJECTS).create(testData.getProject());
 
-        List<String> searchedProjects = ProjectsPage.open().searchForProject(project.getName()).getSideBarProjects().stream().map(proj -> proj.getName().text()).collect(Collectors.toList());
+        ProjectsPage.open().searchForProject(project.getName());
+        List<String> searchedProjects = new ProjectsPage().getSideBarProjects().stream().map(proj -> proj.getName().text()).collect(Collectors.toList());
 
         soft.assertEquals(searchedProjects, Arrays.asList(testData.getProject().getName()));
     }
